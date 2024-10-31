@@ -1,0 +1,22 @@
+import unittest
+
+def calcular_media(nota1, nota2, nota3):
+    # A função ainda não está implementada, então vamos deixar como um placeholder
+    pass
+
+class TestCalculoMedia(unittest.TestCase):
+
+    def test_media_notas_normais(self):
+        self.assertAlmostEqual(calcular_media(7, 8, 9), 8.0)
+
+    def test_media_todas_as_nota_zero(self):
+        self.assertAlmostEqual(calcular_media(0, 0, 0), 0.0)
+
+    def test_media_notas_maximas(self):
+        self.assertAlmostEqual(calcular_media(10, 10, 10), 10.0)
+
+    def test_media_notas_decimais(self):
+        self.assertAlmostEqual(calcular_media(7.5, 8.5, 9.0), 8.3333, places=4)
+
+if __name__ == '__main__':
+    unittest.main()
